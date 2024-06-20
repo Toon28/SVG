@@ -43,16 +43,15 @@
 </svg>
 <script>
 const pos = document.getElementById('pos');
-//const svg = document.getElementById('mySVG');
 document.addEventListener('DOMContentLoaded', function() {
   const BT = [];
   for(let i=0;i<10;i++)
   {
-    const btId = "BT"+i
-    BT.push(document.getElementById(btId))ว
+    const btId = "BT"+i;
+    BT.push(document.getElementById(btId));
     BT[i].addEventListener('click', function(event) {
       pos.textContent = `Clicked at ${i}`;
-    }  
+    });
   }
 });
 </script>
