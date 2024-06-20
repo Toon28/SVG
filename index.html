@@ -43,19 +43,42 @@
 </svg>
 <script>
 const pos = document.getElementById('pos');
+const SVG = document.getElementById('mySVG');
 document.addEventListener('DOMContentLoaded', function() {
-  const BT = [];
-  for(let i=0;i<10;i++)
+  SVG.addEventListener('click', function(event) 
   {
-    const btId = "BT"+i;
-    BT.push(document.getElementById(btId));
-    BT[i].addEventListener('click', (function(num) {
-      return function(event) {
-        pos.textContent = `Clicked at ${num}`;
-      }
-    })(i));
-  }
+    const x = event.offsetX;
+    const y = event.offsetY;
+    const T =ReadClick(x,y)
+    if(T)
+    {
+      pos.textContent=`Number : ${T}`
+    }
+  });
 });
+  function ReadClick( x,y)
+  {
+    for(let j=0;j<4;j++)
+    {
+      if(j<3)
+      {
+        for(let i=0;i<3;i++)
+        {
+          const minx=20+40i;
+          const miny=20+40j;
+          if((x>minx&&x<(minx+30))&&(y>miny&&y<(miny+30)))
+          {
+            return 1+i+(3*j);
+          }
+        }
+      }
+      else if((x>60&&x<(90))&&(y>140&&y<170))
+      {
+        return 1+i+(3*j);
+      }
+    }
+    return null
+  }
 </script>
 <div id="pos"></div>
 </body>
