@@ -59,23 +59,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
   function ReadClick( x,y)
   {
-    for(let j=0;j<4;j++)
+    if((x>60&&x<90)&&(y>140&&y<170))return 0;
+    for(let j=0;j<3;j++)
     {
-      if(j<3)
+      for(let i=0;i<3;i++)
       {
-        for(let i=0;i<3;i++)
+        const minx=20+(40*i);
+        const miny=20+(40*j);
+        if((x>minx&&x<(minx+30))&&(y>miny&&y<(miny+30)))
         {
-          const minx=20+(40*i);
-          const miny=20+(40*j);
-          if((x>minx&&x<(minx+30))&&(y>miny&&y<(miny+30)))
-          {
-            return 1+i+(3*j);
-          }
+          return 1+i+(3*j);
         }
-      }
-      else if((x>60&&x<(90))&&(y>140&&y<170))
-      {
-        return 0;
       }
     }
     return null
