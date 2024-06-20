@@ -16,43 +16,44 @@
 <svg width="800" height="480" id="mySVG">
   <rect width="130" height="170" x="10" y="10" rx="10" ry="10"  style="fill:rgb(220,220,220);stroke-width:3;stroke:rgb(20,20,20);" />
   
-  <rect width="30" height="30" x="20" y="20" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT1" width="30" height="30" x="20" y="20" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="35" y="35" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">1</text>
-  <rect width="30" height="30" x="60" y="20" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT2" width="30" height="30" x="60" y="20" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="75" y="35" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">2</text>
-  <rect width="30" height="30" x="100" y="20" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT3" width="30" height="30" x="100" y="20" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="115" y="35" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">3</text>
 
-  <rect width="30" height="30" x="20" y="60" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT4" width="30" height="30" x="20" y="60" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="35" y="75" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">4</text>
-  <rect width="30" height="30" x="60" y="60" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT5" width="30" height="30" x="60" y="60" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="75" y="75" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">5</text>
-  <rect width="30" height="30" x="100" y="60" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT6" width="30" height="30" x="100" y="60" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="115" y="75" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">6</text>
 
-  <rect width="30" height="30" x="20" y="100" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT7" width="30" height="30" x="20" y="100" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="35" y="115" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">7</text>
-  <rect width="30" height="30" x="60" y="100" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT8" width="30" height="30" x="60" y="100" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="75" y="115" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">8</text>
-  <rect width="30" height="30" x="100" y="100" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT9" width="30" height="30" x="100" y="100" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="115" y="115" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">9</text>
 
-  <rect width="30" height="30" x="60" y="140" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
+  <rect id="BT0" width="30" height="30" x="60" y="140" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="75" y="155" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">0</text>
   
 </svg>
 <script>
-function readButton(x,y)
-{
-  pos.textContent = `Clicked at x: ${x}, y: ${y}`;
-}
+const pos = document.getElementById('pos');
+//const svg = document.getElementById('mySVG');
 document.addEventListener('DOMContentLoaded', function() {
-  const svg = document.getElementById('mySVG');
-  const pos = document.getElementById('pos');
-  svg.addEventListener('click', function(event) {
-  const x = event.offsetX;
-  const y = event.offsetY;
-  });
+  const BT = [];
+  for(let i=0;i<10;i++)
+  {
+    const btId = "BT"+i
+    BT.push(document.getElementById(btId);)
+    BT[i].addEventListener('click', function(event) {
+      pos.textContent = `Clicked at ${i}`;
+    }  
+  }
 });
 </script>
 <div id="pos"></div>
