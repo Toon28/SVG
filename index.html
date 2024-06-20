@@ -42,14 +42,16 @@
   
 </svg>
 <script>
+function readButton(x,y)
+{
+  pos.textContent = `Clicked at x: ${x}, y: ${y}`;
+}
 document.addEventListener('DOMContentLoaded', function() {
   const svg = document.getElementById('mySVG');
   const pos = document.getElementById('pos');
   svg.addEventListener('click', function(event) {
   const x = event.offsetX;
   const y = event.offsetY;
-  pos.textContent = `Clicked at x: ${x}, y: ${y}`;
-  //console.log(`Clicked at x: ${x}, y: ${y}`);
   });
 });
 </script>
