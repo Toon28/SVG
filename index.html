@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
   function ReadClick( x,y)
   {
-    if((x>60&&x<90)&&(y>140&&y<170))return 0;
+    console.log(`${x} ${y}`)
+    if(((x>60)&&(x<90))&&((y>140)&&(y<170)))return 0;
     for(let j=0;j<3;j++)
     {
       for(let i=0;i<3;i++)
