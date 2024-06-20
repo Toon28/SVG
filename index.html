@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         for(let i=0;i<3;i++)
         {
-          const minx=20+40i;
-          const miny=20+40j;
+          const minx=20+(40*i);
+          const miny=20+(40*j);
           if((x>minx&&x<(minx+30))&&(y>miny&&y<(miny+30)))
           {
             return 1+i+(3*j);
