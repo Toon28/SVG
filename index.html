@@ -44,14 +44,16 @@
 <script>
 const pos = document.getElementById('pos');
 document.addEventListener('DOMContentLoaded', function() {
-  let BT = [];
+  const BT = [];
   for(let i=0;i<10;i++)
   {
     const btId = "BT"+i;
     BT.push(document.getElementById(btId));
-    BT[i].addEventListener('click', function(event) {
-      pos.textContent = `Clicked at ${i}`;
-    });
+    BT[i].addEventListener('click', (function(num) {
+      return function(event) {
+        pos.textContent = `Clicked at ${num}`;
+      }
+    })(i));
   }
 });
 </script>
