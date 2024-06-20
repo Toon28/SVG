@@ -42,18 +42,19 @@
   
 </svg>
 <script>
-const pos = document.getElementById('pos');
-const SVG = document.getElementById('mySVG');
+const svg = document.getElementById('mySVG');
+const txt = document.getElementById('txt');
 document.addEventListener('DOMContentLoaded', function() {
-  SVG.addEventListener('click', function(event) 
+  svg.addEventListener('click', function(event) 
   {
     const x = event.offsetX;
     const y = event.offsetY;
-    const T =ReadClick(x,y)
+    txt.textContent=`Number : ${x} ${y}`
+    /*const T =ReadClick(x,y)
     if(T)
     {
       pos.textContent=`Number : ${T}`
-    }
+    }*/
   });
 });
   function ReadClick( x,y)
