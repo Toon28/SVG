@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SVG Click Event</title>
 <style>
-  /* Optional CSS for styling SVG */
   svg {
     border: 1px solid #ccc;
     display: block;
@@ -14,30 +13,22 @@
 </style>
 </head>
 <body>
-
-<svg width="1024" height="768" id="mySVG">
-  <!-- เพิ่มรูปหรือสิ่งต่างๆ ที่คุณต้องการ -->
+<svg width="800" height="480" id="mySVG">
   <circle cx="100" cy="100" r="50" fill="red" />
   <rect x="200" y="200" width="100" height="100" fill="blue" />
-  <!-- ตัวอย่างอื่น ๆ -->
 </svg>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // เลือก SVG ด้วย ID
   const svg = document.getElementById('mySVG');
-
-  // ใส่ Event Listener สำหรับการคลิก
+  const pos = document.getElementById('pos');
   svg.addEventListener('click', function(event) {
-    // หาค่า x และ y ของเหตุการณ์คลิกภายใน SVG
-    const x = event.offsetX;
-    const y = event.offsetY;
-
-    // แสดงผลใน Console
-    console.log(`Clicked at x: ${x}, y: ${y}`);
+  const x = event.offsetX;
+  const y = event.offsetY;
+  pos.textContent = `Clicked at x: ${x}, y: ${y}`;
+  //console.log(`Clicked at x: ${x}, y: ${y}`);
   });
 });
 </script>
-
+<div id="pos"></div>
 </body>
 </html>
