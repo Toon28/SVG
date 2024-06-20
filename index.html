@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const x = event.offsetX;
     const y = event.offsetY;
     const T =ReadClick(x,y)
-    if(T)
+    if(T!=null)
     {
       txt.textContent=`Number : ${T}`
     }
