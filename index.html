@@ -39,22 +39,22 @@
 
   <rect id="BT0" width="30" height="30" x="60" y="140" rx="10" ry="10"  style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(30,30,30);" />
   <text x="75" y="155" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">0</text>
-  
+  <div id="pos"></div>
 </svg>
 <script>
-const svg = document.getElementById('mySVG');
-const txt = document.getElementById('pos');
+
 document.addEventListener('DOMContentLoaded', function() {
+  const svg = document.getElementById('mySVG');
+  const txt = document.getElementById('pos');
   svg.addEventListener('click', function(event) 
   {
     const x = event.offsetX;
     const y = event.offsetY;
-    txt.textContent=`Number : ${x} ${y}`
-    /*const T =ReadClick(x,y)
+    const T =ReadClick(x,y)
     if(T)
     {
-      pos.textContent=`Number : ${T}`
-    }*/
+      txt.textContent=`Number : ${T}`
+    }
   });
 });
   function ReadClick( x,y)
@@ -81,6 +81,5 @@ document.addEventListener('DOMContentLoaded', function() {
     return null
   }
 </script>
-<div id="pos"></div>
 </body>
 </html>
