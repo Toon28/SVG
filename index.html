@@ -41,13 +41,26 @@
   <text x="75" y="155" text-anchor="middle" alignment-baseline="middle" font-size="16" fill="black">0</text>
   
   <!--<path id="lineU" d="M 100 20 l 50 0 Q 165 20 180 50 Q 165 80 150 80 l -50 0 q 30 -30 0 -60" stroke="black" fill="none" stroke-width="4"/>-->
-  <div id="pos"></div>
 </svg>
+<div id="pos"></div>
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {
   const svg = document.getElementById('mySVG');
   const txt = document.getElementById('pos');
+  fetch('text.txt')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.text();
+    })
+    .then(data => {
+      txt.textContent = data;
+    })
+    .catch(error => {
+      console.error('Error loading the file:', error);
+    });
   svg.addEventListener('click', function(event) 
   {
     const x = event.offsetX;
